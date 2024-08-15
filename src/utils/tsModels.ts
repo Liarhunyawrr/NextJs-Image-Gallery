@@ -14,3 +14,10 @@ export interface UnsplashImg {
 export interface PageProps {
   params: { tag: string };
 }
+
+export interface UnsplashUser {
+  username: string;
+  first_name: string;
+  last_name: string;
+  errors:[]
+}

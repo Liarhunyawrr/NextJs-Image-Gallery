@@ -8,14 +8,11 @@ export default function SearchBar() {
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setformData(e.target.value);
     if (error) seterror("");
+
   };
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    if (formData.length === 0) {
-      seterror("Please Enter Value");
-    } else {
-      alert(`You searched for: ${formData}`);
-    }
+   
   };
 
   return (
