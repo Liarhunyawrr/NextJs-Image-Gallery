@@ -8,7 +8,7 @@ export const metadata: Metadata = {
 
 export default async function page() {
   const response = await fetch(
-    `https://api.unsplash.com/photos/random?client_id=${process.env.UNSPLASH_ACCESS_KEY}`
+    `https://api.unsplash.com/photos/random?client_id=QjbNhxfURhezV2VRwAl73TAs-J6ZVi9f_pf2E0jIjdc`
   );
   const image: UnsplashImg = await response.json();
 
@@ -21,17 +21,23 @@ export default async function page() {
           }
         />
       </div>
-      <div className=" mx-auto flex-col gap-3 items-center  flex justify-center relative  my-6 ">
+      <div className=" mx-auto  flex-col gap-3 items-center  flex justify-center relative  my-6 ">
         <Image
           src={image.urls.raw}
-          className="rounded-md bg-gray-600 "
+          className="rounded-md bg-gray-200 "
           height={300}
           width={300}
           priority
           alt=""
         />
-      <h6 className="text-center">by {image.user.username}</h6>
+        <h6 className="text-center">by {image.user.username}</h6>
       </div>
+
+
+
+
+
+
     </>
   );
 }
