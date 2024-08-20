@@ -24,13 +24,13 @@ const Topic = ({ params: { tag } }: PageProps) => {
 
   return (
     <>
+      <h1 className="my-6 font-bold text-xl text-gray-600">
+        Showing Result of : <span className="capitalize">{tag}</span>
+      </h1>
       {loader ? (
         <Loading />
       ) : (
         <div>
-          <h1 className="my-6 font-bold text-xl text-gray-600">
-            Showing Result of : <span className="capitalize">{tag}</span>
-          </h1>
           <div className=" columns-4 mb-12 md:columns-3 sm:columns-2  gap-4 ">
             {imgsData.map((e, i) => (
               <div
