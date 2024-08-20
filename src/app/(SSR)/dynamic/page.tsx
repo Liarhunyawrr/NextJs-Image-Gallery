@@ -2,6 +2,7 @@ import HeroALert from "@/components/HeroALert";
 import { UnsplashImg } from "@/utils/tsModels";
 import { Metadata } from "next";
 import Image from "next/image";
+import Link from "next/link";
 export const metadata: Metadata = {
   title: "Dynamic Fetching - NextJs Image Gallery",
 };
@@ -29,7 +30,15 @@ export default async function page() {
           priority
           alt=""
         />
-        <h6 className="text-center">by {image.user.username}</h6>
+        <h6 className="text-center">
+          by{" "}
+          <Link
+            href={`/user/${image.user.username}`}
+            className="text-blue-600 hover:underline hover:text-blue-800 text-sm"
+          >
+            {image.user.username}
+          </Link>{" "}
+        </h6>
       </div>
     </>
   );

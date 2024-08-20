@@ -13,6 +13,7 @@ export default function SearchBar() {
   };
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
+    setformData("")
     router.push(`/topic/${formData}`);
   };
 
