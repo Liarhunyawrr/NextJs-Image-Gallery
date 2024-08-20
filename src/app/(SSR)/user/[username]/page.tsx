@@ -54,10 +54,12 @@ export default async function page({ params: { username } }: PageProps) {
           First Name :
           <span className="font-semibold"> {userData.first_name}</span>
         </h1>
-        <h1 className="">
-          Last Name :
-          <span className="font-semibold"> {userData.last_name}</span>
-        </h1>
+        {userData.last_name && userData.last_name.length > 0 && (
+  <h1 className="">
+    Last Name:
+    <span className="font-semibold"> {userData.last_name}</span>
+  </h1>
+)}
         <Link
           className="text-blue-600 hover:underline hover:text-blue-800 text-sm "
           target="_blank"

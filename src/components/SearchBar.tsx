@@ -1,18 +1,19 @@
 "use client";
+import { useRouter } from "next/navigation";
 import React, { useState } from "react";
 import { IoSearchSharp } from "react-icons/io5";
 
 export default function SearchBar() {
   const [formData, setformData] = useState("");
   const [error, seterror] = useState("");
+  const router = useRouter();
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setformData(e.target.value);
     if (error) seterror("");
-
   };
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-   
+    router.push(`/topic/${formData}`);
   };
 
   return (
